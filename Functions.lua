@@ -36,6 +36,7 @@ functions = {
         
         function NewFile(NameOfFile) 
             return file = love.filesystem.newFile(NameOfFile)
+        end
     }
 }
 
