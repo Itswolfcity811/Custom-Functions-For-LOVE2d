@@ -35,7 +35,8 @@ functions = {
         ]]
         
         NewFile = function (NameOfFile) 
-            return file = love.filesystem.newFile(NameOfFile)
+            local file = love.filesystem.newFile(NameOfFile)
+            return file
         end, --[[This function makes a new file. This is how I think you use it:
             functions.Data.NewFile(NameOfFile) -- But you should probaly do it like this:
             local Files = {}
@@ -49,8 +50,10 @@ functions = {
     Graphics = {},
     
     Mouse = {
-        Position function ()
-            return x = love.mouse.getX, y = love.mouse.getY
+        Position = function ()
+            local x = love.mouse.getX
+            local y = love.mouse.getY
+            return x, y
         end --[[Use this as a simpler way of getting the mouse x and y. You will use it like:
             MouseX, MouseY = functions.mouse.Position()
         ]]
