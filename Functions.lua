@@ -19,7 +19,7 @@ functions = {
         --[[This function is a shorter way of printing to the screen. You will use it like this:
             functions:Print("Hello World", 500, 500)
         ]]
-    end
+    end,
     
     Data = {
         function Write(name, data, size)
@@ -30,13 +30,13 @@ functions = {
                 love.errorhandler(message)
                 return
             end
-        end --[[This function writes to file, I'm not to sure how it works though. I think this is how you use it:
+        end, --[[This function writes to file, I'm not to sure how it works though. I think this is how you use it:
             functions.Data:Write(name, data, size) -- I don't know how it works
         ]]
         
         function NewFile(NameOfFile) 
             return file = love.filesystem.newFile(NameOfFile)
-        end --[[This function makes a new file. This is how I think you use it:
+        end, --[[This function makes a new file. This is how I think you use it:
             functions.Data:NewFile(NameOfFile) -- But you should probaly do it like this:
             local Files = {}
         
@@ -45,6 +45,8 @@ functions = {
             table.append(Files, file)
         ]]
     }
+    
+    Graphics = {},
 }
 
 return functions
