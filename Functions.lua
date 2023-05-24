@@ -20,6 +20,17 @@ functions = {
             functions.Print("Hello World", 500, 500)
         ]]
     end
+    
+    Data = {
+        write = function(name, data, size)
+            success, message = love.filesystem.write( name, data, size )
+            if success then
+                return
+            else
+                return message
+            end
+        end
+    }
 }
 
 return functions
