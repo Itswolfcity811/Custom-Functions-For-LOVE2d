@@ -22,7 +22,7 @@ functions = {
     end
     
     Data = {
-        Write = function(name, data, size)
+        function Write(name, data, size)
             success, message = love.filesystem.write( name, data, size )
             if success then
                 return
