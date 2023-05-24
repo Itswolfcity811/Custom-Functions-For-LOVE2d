@@ -55,6 +55,18 @@ functions = {
             MouseX, MouseY = functions.mouse:Position()
         ]]
     },
+    
+    Window = {
+        function Quit(Confermation)
+           if not Congermation then
+                love.event.quit()
+           else
+                --Not Fineshed
+           end
+        end --[[This is how you can quit the game. Use "Confermation" as a boolean value. If you put false it will just close the window, if you put true it will ask the user for a promt input and if they say yes then it closes and if not nothing happens. You will use it like this:
+            functions.Window:Quit(True) -- You could put false though
+        ]]
+    }
 }
 
 return functions
