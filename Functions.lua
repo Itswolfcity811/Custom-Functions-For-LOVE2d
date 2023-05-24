@@ -3,6 +3,8 @@
         local functions = require("Functions")
 ]]
 
+local love = require("love")
+
 functions = {
     Color = function (value1, value2, value3)
         return value1 / 255, value2 / 255, value3 / 255
@@ -11,6 +13,11 @@ functions = {
             You will use it like:
                 love.graphics.setBackgroundColor(functions.Color(0, 0, 0))
             ]]
+    end,
+    
+    Print = function (text, x, y)
+        love.graphics.print(text, x, y)
+        return 1
     end
 }
 
