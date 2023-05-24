@@ -36,7 +36,14 @@ functions = {
         
         function NewFile(NameOfFile) 
             return file = love.filesystem.newFile(NameOfFile)
-        end
+        end --[[This function makes a new file. This is how I think you use it:
+            functions.Data:NewFile(NameOfFile) -- But you should probaly do it like this:
+            local Files = {}
+        
+            functions.Data:NewFile(NameOfFile)
+        
+            table.append(Files, file)
+        ]]
     }
 }
 
