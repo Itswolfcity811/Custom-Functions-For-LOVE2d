@@ -44,7 +44,7 @@ functions = {
         
             table.append(Files, file)
         ]]
-    }
+    },
     
     Graphics = {},
     
