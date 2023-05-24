@@ -9,7 +9,7 @@ functions = {
         --[[If you are used to the standered (0-255, 0-255, 0-255) RGB, then this will convert it to (0-1, 0-1, 0-1). You have to import it in every file like this:
                 local functions = require("Functions")
             You will use it like:
-                love.graphics.setBackgroundColor(functions:Color(0, 0, 0))
+                love.graphics.setBackgroundColor(functions.Color(0, 0, 0))
             ]]
     end
 }
