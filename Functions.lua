@@ -47,6 +47,14 @@ functions = {
     }
     
     Graphics = {},
+    
+    Mouse = {
+        function Position()
+            return x = love.mouse.getX, y = love.mouse.getY
+        end --[[Use this as a simpler way of getting the mouse x and y. You will use it like:
+            MouseX, MouseY = functions.mouse:Position()
+        ]]
+    },
 }
 
 return functions
