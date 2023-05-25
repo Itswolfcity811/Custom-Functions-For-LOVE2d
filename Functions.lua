@@ -30,7 +30,7 @@ functions = {
                 love.errorhandler(message)
                 return
             end
-        end, --[[This function writes to file, I'm not to sure how it works though. I think this is how you use it:
+        end, --[[This function writes to file, I'm not to sure how it works though.NOTE: THIS WILL OVERRIDE YOUR FILE . I think this is how you use it:
             functions.Data:Write(name, data, size) -- I don't know how it works
         ]]
         
