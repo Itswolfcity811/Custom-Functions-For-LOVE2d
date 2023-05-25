@@ -105,7 +105,13 @@ functions = {
                     else
                         peer:disconnect_later()
                     end
-                end
+                end, --[[This requests a disconect but after all data is transfered. You will use it like:
+                        function.Enet.Client:LaterDisconect(OpitionalData) 
+                        --I really suggest to do this:
+                        function.Enet.Client:LaterDisconect(OpitionalData)
+                        
+                        function.Enet.Client:ForceDisconectDisconect(OpitionalData)
+                ]]
             }
 
             end
