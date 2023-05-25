@@ -69,7 +69,15 @@ functions = {
         end --[[This is how you can quit the game. Use "Confermation" as a boolean value. If you put false it will just close the window, if you put true it will ask the user for a promt input and if they say yes then it closes and if not nothing happens. You will use it like this:
             functions.Window:Quit(True) -- You could put false though
         ]]
-    }
+    },
+    
+    --The following is 3rd party aplecations
+    --I put them in a pcall function so they don't throw and error incase they aren't installed
+    Enet = {pcall(function()
+        Server = {
+                    
+        }        
+    )},
 }
 
 return functions
