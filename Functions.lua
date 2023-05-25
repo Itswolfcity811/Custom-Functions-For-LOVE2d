@@ -45,6 +45,16 @@ functions = {
         
             table.append(Files, file)
         ]]
+        
+        LoadFile = function (NameOfFile, size1)
+            local size = nil or size1
+            local contents, size = love.filesystem.read( name, size )
+            return contents, size
+        end, --[[This loads the contant of the file. You don't have to put anything for the second peramater. You will use it like:
+            Contents, Size = functions.Data:LoadFile(FileName, nil)
+        ]]
+        
+        CreateAndWrite 
     },
     
     Graphics = {},
