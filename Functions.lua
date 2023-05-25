@@ -73,13 +73,44 @@ functions = {
     
     --The following is 3rd party aplecations
     --I put them in a pcall function so they don't throw and error incase they aren't installed
-    Enet = {pcall(function()
-        Server = {
-                    
-        }
+    pcall(function()
+        Enet = {
+            Server = {
+
+            },
+
+            Client = {
+                Disconect = function(data)
+                    if data ~= nil
+                        peer:disconect(data)
+                    else
+                        peer:disconect()      
+                    end
+                end, --[[Asks for a disconect from the host. You will use it like:
+                        function.Enet.Client:Disconect(OpitionalData)
+                ]]
+                ForceDisconect = function(data)
+                    if data ~= nil
+                        peer:disconnect_now(data)
+                    else
+                        peer:disconnect_now()
+                    end
+                end, --[[This Disconects the client from the host. I don't suggest using this if you have a saveing mechanic or anything like that. You will use it like this:
+                        function.Enet.Client:ForceDisconectDisconect(OpitionalData)
+                ]]
                 
-        end
-    )},
+                LaterDisconect = function(data)
+                    if data ~= nil
+                        peer:disconnect_later(data)
+                    else
+                        peer:disconnect_later()
+                    end
+                end
+            }
+
+            end
+        },
+    )
 }
 
 return functions
