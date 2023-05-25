@@ -1,4 +1,4 @@
----[[ 
+--[[ 
     You have to import it in every file like this:
         local functions = require("Functions")
 ]]
