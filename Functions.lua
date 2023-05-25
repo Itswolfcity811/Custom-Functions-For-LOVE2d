@@ -54,7 +54,11 @@ functions = {
             Contents, Size = functions.Data:LoadFile(FileName, nil)
         ]]
         
-        CreateAndWrite 
+        CreateAndWrite = function(self, NameOfFile, data, size)
+            local file = NewFile(NameOfFile)
+            Write(file, data, size)
+            return file
+        end
     },
     
     Graphics = {},
