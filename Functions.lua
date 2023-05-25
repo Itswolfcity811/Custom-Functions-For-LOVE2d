@@ -95,7 +95,7 @@ functions = {
 
             Client = {
                 Disconect = function(data)
-                    if data ~= nil
+                    if data ~= nil then
                         peer:disconect(data)
                     else
                         peer:disconect()      
@@ -104,7 +104,7 @@ functions = {
                         function.Enet.Client:Disconect(OpitionalData)
                 ]]
                 ForceDisconect = function(data)
-                    if data ~= nil
+                    if data ~= nil then
                         peer:disconnect_now(data)
                     else
                         peer:disconnect_now()
@@ -114,7 +114,7 @@ functions = {
                 ]]
                 
                 LaterDisconect = function(data)
-                    if data ~= nil
+                    if data ~= nil then
                         peer:disconnect_later(data)
                     else
                         peer:disconnect_later()
@@ -128,9 +128,9 @@ functions = {
                 ]]
             }
 
-            end
-        },
-    )
+            
+        }
+    end),
 }
 
 return functions
