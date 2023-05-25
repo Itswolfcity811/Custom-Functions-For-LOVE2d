@@ -30,7 +30,7 @@ functions = {
                 love.errorhandler(message)
                 return
             end
-        end, --[[This function writes to file, I'm not to sure how it works though.NOTE: THIS WILL OVERRIDE YOUR FILE . I think this is how you use it:
+        end, --[[This function writes to file, I'm not to sure how it works though.NOTE:THIS WILL OVERRIDE YOUR FILE. I think this is how you use it:
             functions.Data:Write(name, data, size) -- I don't know how it works
         ]]
         
@@ -45,6 +45,20 @@ functions = {
         
             table.append(Files, file)
         ]]
+        
+        LoadFile = function (NameOfFile, size1)
+            local size = nil or size1
+            local contents, size = love.filesystem.read( name, size )
+            return contents, size
+        end, --[[This loads the contant of the file. You don't have to put anything for the second peramater. You will use it like:
+            Contents, Size = functions.Data:LoadFile(FileName, nil)
+        ]]
+        
+        CreateAndWrite = function(self, NameOfFile, data, size)
+            local file = NewFile(NameOfFile)
+            Write(file, data, size)
+            return file
+        end
     },
     
     Graphics = {},
@@ -69,7 +83,54 @@ functions = {
         end --[[This is how you can quit the game. Use "Confermation" as a boolean value. If you put false it will just close the window, if you put true it will ask the user for a promt input and if they say yes then it closes and if not nothing happens. You will use it like this:
             functions.Window:Quit(True) -- You could put false though
         ]]
-    }
+    },
+    
+    --The following is 3rd party aplecations
+    --I put them in a pcall function so they don't throw and error incase they aren't installed
+    pcall(function()
+        Enet = {
+            Server = {
+
+            },
+
+            Client = {
+                Disconect = function(data)
+                    if data ~= nil then
+                        peer:disconect(data)
+                    else
+                        peer:disconect()      
+                    end
+                end, --[[Asks for a disconect from the host. You will use it like:
+                        function.Enet.Client:Disconect(OpitionalData)
+                ]]
+                ForceDisconect = function(data)
+                    if data ~= nil then
+                        peer:disconnect_now(data)
+                    else
+                        peer:disconnect_now()
+                    end
+                end, --[[This Disconects the client from the host. I don't suggest using this if you have a saveing mechanic or anything like that. You will use it like this:
+                        function.Enet.Client:ForceDisconectDisconect(OpitionalData)
+                ]]
+                
+                LaterDisconect = function(data)
+                    if data ~= nil then
+                        peer:disconnect_later(data)
+                    else
+                        peer:disconnect_later()
+                    end
+                end, --[[This requests a disconect but after all data is transfered. You will use it like:
+                        function.Enet.Client:LaterDisconect(OpitionalData) 
+                        --I really suggest to do this:
+                        function.Enet.Client:LaterDisconect(OpitionalData)
+                        
+                        function.Enet.Client:ForceDisconectDisconect(OpitionalData)
+                ]]
+            }
+
+            
+        }
+    end),
 }
 
 return functions
