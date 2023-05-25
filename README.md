@@ -3,6 +3,8 @@ I made some qualify of life functions in this file, please also note these funct
 
 If some of the functions don't work please let me know but I will make sure they don't through any errors, only in this branch so far.
 
+Please note that it is built for LÖVE 11.4.
+
 All I ask for is that you give a link to this repository if you used my functions.
 
 You can find the LÖVE 2d framework here: https://love2d.org/
