@@ -65,8 +65,8 @@ functions = {
     
     Mouse = {
         Position = function ()
-            local x = love.mouse.getX
-            local y = love.mouse.getY
+            local x = love.mouse.getX()
+            local y = love.mouse.getY()
             return x, y
         end --[[Use this as a simpler way of getting the mouse x and y. You will use it like:
             MouseX, MouseY = functions.mouse.Position()
