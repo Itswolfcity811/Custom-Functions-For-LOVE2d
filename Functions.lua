@@ -20,7 +20,8 @@ functions = {
             functions.Print("Hello World", 500, 500)
         ]]
     end,
-    
+
+    --Deprecated; use Load-Save functions from another one of my repositories!!
     Data = {
         Write = function (name, data, size)
             success, message = love.filesystem.write( name, data, size )
@@ -60,6 +61,7 @@ functions = {
             return file
         end
     },
+    --End of deprecated;
     
     Graphics = {},
     
